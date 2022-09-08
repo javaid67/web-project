@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <div class="heading">
+      <h1><%=list_title  %></h1>
+    </div>
+<div class="list">
+
+    <ul>
+      <div class="delete">
+
+          <form class="" action="/delete" method="post">
+        <% newItems.forEach(function(items){ %>
+          <input type="checkbox" name="item_delete" onchange="this.form.submit()" value="<%= items._id %>">
+          <p><%=items.name %></p>
+        <%    }) %>
+          </form>
+      </div>
+
+      <div class="submit">
+
+  <form class="" action="/" method="post">
+
+  <input type="text" name="item" >
+  <button name="list" value=" <%=list_title%>" type="submit" >Add</button>
+
+</form>
+</div>
+    </ul>
+  </div>
+
+  </body>
+</html>
